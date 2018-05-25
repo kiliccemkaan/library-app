@@ -1,0 +1,8 @@
+name: hallo
+server:
+  port: 8080
+logging:
+  level:
+    hello: DEBUG
+
+    
