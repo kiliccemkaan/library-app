@@ -9,7 +9,7 @@
  * History:
  *    $Log$
  */
-package net.intelegence.proto.library;
+package net.intelegence.proto.library.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -8,7 +8,6 @@ import java.time.LocalDate;
 public class Autor {
 
     private LocalDate geburtsdatum;
-    private int alter;
     private String name;
 
 
@@ -22,13 +21,11 @@ public class Autor {
 
     /**
      * @param geburtsdatum
-     * @param alter
      * @param name
      */
-    public Autor(LocalDate geburtsdatum, int alter, String name) {
+    public Autor(LocalDate geburtsdatum, String name) {
         super();
         this.geburtsdatum = geburtsdatum;
-        this.alter = alter;
         this.name = name;
     }
 
@@ -46,18 +43,6 @@ public class Autor {
         this.geburtsdatum = geburtsdatum;
     }
 
-    /**
-     * @return the alter
-     */
-    public int getAlter() {
-        return this.alter;
-    }
-    /**
-     * @param alter the alter to set
-     */
-    public void setAlter(int alter) {
-        this.alter = alter;
-    }
     /**
      * @return the name
      */
@@ -77,7 +62,6 @@ public class Autor {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + this.alter;
         result = prime * result + (this.geburtsdatum == null ? 0 : this.geburtsdatum.hashCode());
         result = prime * result + (this.name == null ? 0 : this.name.hashCode());
         return result;
@@ -97,9 +81,6 @@ public class Autor {
             return false;
         }
         Autor other = (Autor) obj;
-        if (this.alter != other.alter) {
-            return false;
-        }
         if (this.geburtsdatum == null) {
             if (other.geburtsdatum != null) {
                 return false;
@@ -121,7 +102,7 @@ public class Autor {
      */
     @Override
     public String toString() {
-        return "Autor [geburtsdatum=" + this.geburtsdatum + ", alter=" + this.alter + ", name=" + this.name + "]";
+        return "Autor [geburtsdatum=" + this.geburtsdatum + ", name=" + this.name + "]";
     }
 
 

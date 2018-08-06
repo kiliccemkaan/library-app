@@ -21,12 +21,12 @@ import java.time.LocalDate;
  */
 public class Member {
 
+    private int memberid;
     private String name;
     private LocalDate geburtsdatum;
     private int alter;
-    private String straße;
+    private String strasse;
     private int telefonnummer;
-    private String memberid;
     private String passwort;
 
     /**
@@ -44,12 +44,12 @@ public class Member {
      * @param memberid
      * @param passwort
      */
-    public Member(String name, LocalDate geburtsdatum, int alter, String straße, int telefonnummer, String memberid, String passwort) {
+    public Member(String name, LocalDate geburtsdatum, int alter, String straße, int telefonnummer, int memberid, String passwort) {
         super();
         this.name = name;
         this.geburtsdatum = geburtsdatum;
         this.alter = alter;
-        this.straße = straße;
+        this.strasse = straße;
         this.telefonnummer = telefonnummer;
         this.memberid = memberid;
         this.passwort = passwort;
@@ -112,14 +112,14 @@ public class Member {
      * @return the straße
      */
     public String getStraße() {
-        return this.straße;
+        return this.strasse;
     }
 
     /**
      * @param straße the straße to set
      */
     public void setStraße(String straße) {
-        this.straße = straße;
+        this.strasse = straße;
     }
 
     /**
@@ -139,13 +139,13 @@ public class Member {
     /**
      * @return the memberid
      */
-    public String getMemberid() {
+    public int getMemberid() {
         return this.memberid;
     }
     /**
      * @param memberid the memberid to set
      */
-    public void setMemberid(String memberid) {
+    public void setMemberid(int memberid) {
         this.memberid = memberid;
     }
     /* (non-Javadoc)
@@ -157,10 +157,10 @@ public class Member {
         int result = 1;
         result = prime * result + this.alter;
         result = prime * result + (this.geburtsdatum == null ? 0 : this.geburtsdatum.hashCode());
-        result = prime * result + (this.memberid == null ? 0 : this.memberid.hashCode());
+        result = prime * result + this.memberid;
         result = prime * result + (this.name == null ? 0 : this.name.hashCode());
         result = prime * result + (this.passwort == null ? 0 : this.passwort.hashCode());
-        result = prime * result + (this.straße == null ? 0 : this.straße.hashCode());
+        result = prime * result + (this.strasse == null ? 0 : this.strasse.hashCode());
         result = prime * result + this.telefonnummer;
         return result;
     }
@@ -175,7 +175,7 @@ public class Member {
         if (obj == null) {
             return false;
         }
-        if (!(obj instanceof Member)) {
+        if (getClass() != obj.getClass()) {
             return false;
         }
         Member other = (Member) obj;
@@ -189,11 +189,7 @@ public class Member {
         } else if (!this.geburtsdatum.equals(other.geburtsdatum)) {
             return false;
         }
-        if (this.memberid == null) {
-            if (other.memberid != null) {
-                return false;
-            }
-        } else if (!this.memberid.equals(other.memberid)) {
+        if (this.memberid != other.memberid) {
             return false;
         }
         if (this.name == null) {
@@ -210,11 +206,11 @@ public class Member {
         } else if (!this.passwort.equals(other.passwort)) {
             return false;
         }
-        if (this.straße == null) {
-            if (other.straße != null) {
+        if (this.strasse == null) {
+            if (other.strasse != null) {
                 return false;
             }
-        } else if (!this.straße.equals(other.straße)) {
+        } else if (!this.strasse.equals(other.strasse)) {
             return false;
         }
         if (this.telefonnummer != other.telefonnummer) {
@@ -227,7 +223,7 @@ public class Member {
      */
     @Override
     public String toString() {
-        return "Member [name=" + this.name + ", geburtsdatum=" + this.geburtsdatum + ", alter=" + this.alter + ", straße=" + this.straße + ", telefonnummer=" + this.telefonnummer + ", memberid=" + this.memberid + ", passwort="
+        return "Member [name=" + this.name + ", geburtsdatum=" + this.geburtsdatum + ", alter=" + this.alter + ", straße=" + this.strasse + ", telefonnummer=" + this.telefonnummer + ", memberid=" + this.memberid + ", passwort="
                 + this.passwort + "]";
     }
 

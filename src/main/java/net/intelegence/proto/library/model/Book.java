@@ -12,16 +12,19 @@
 package net.intelegence.proto.library.model;
 
 public class Book {
+
+    private String id;
+
     // Felder (Fields)
     private String titel;
 
     private Autor autor;
 
-    private String isbnNummer;
+    private Integer isbnNummer;
 
     private String beschreibung;
 
-    private int    seitanzahl;
+    private Integer    seitanzahl;
 
     // Konstruktoren (Constructor)
 
@@ -34,15 +37,15 @@ public class Book {
      * @param autor
      * @param isbnNummer
      * @param beschreibung
-     * @param seitanzahl
+     * @param seitenzahl
      */
-    public Book(String titel, Autor autor, String isbnNummer, String beschreibung, int seitanzahl) {
+    public Book(String titel, Autor autor, Integer isbnNummer, String beschreibung, Integer seitenzahl) {
         super();
         this.titel = titel;
         this.autor = autor;
         this.isbnNummer = isbnNummer;
         this.beschreibung = beschreibung;
-        this.seitanzahl = seitanzahl;
+        this.seitanzahl = seitenzahl;
     }
 
     // Eigenschaften (Properties)
@@ -58,10 +61,34 @@ public class Book {
         // TODO Auto-generated constructor stub
     }
 
+
+
+    // Methoden (Methods)
+
+    /**
+     * @return the id
+     */
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the titel
+     */
     public String getTitel() {
         return this.titel;
     }
 
+    /**
+     * @param titel the titel to set
+     */
     public void setTitel(String titel) {
         this.titel = titel;
     }
@@ -74,26 +101,24 @@ public class Book {
     }
 
     /**
-     * @param
-     *            the autor to set
+     * @param autor the autor to set
      */
     public void setAutor(Autor autor) {
-        this.autor = autor ;
+        this.autor = autor;
     }
 
     /**
      * @return the isbnNummer
      */
-    public String getIsbnNummer() {
+    public Integer getIsbnNummer() {
         return this.isbnNummer;
     }
 
     /**
-     * @param isbnNummer
-     *            the isbnNummer to set
+     * @param string the isbnNummer to set
      */
-    public void setIsbnNummer(String isbnNummer) {
-        this.isbnNummer = isbnNummer;
+    public void setIsbnNummer(Integer integer) {
+        this.isbnNummer = integer;
     }
 
     /**
@@ -104,8 +129,7 @@ public class Book {
     }
 
     /**
-     * @param beschreibung
-     *            the beschreibung to set
+     * @param beschreibung the beschreibung to set
      */
     public void setBeschreibung(String beschreibung) {
         this.beschreibung = beschreibung;
@@ -114,19 +138,16 @@ public class Book {
     /**
      * @return the seitanzahl
      */
-    public int getSeitanzahl() {
+    public Integer getSeitanzahl() {
         return this.seitanzahl;
     }
 
     /**
-     * @param seitanzahl
-     *            the seitanzahl to set
+     * @param seitanzahl the seitanzahl to set
      */
-    public void setSeitanzahl(int seitanzahl) {
+    public void setSeitanzahl(Integer seitanzahl) {
         this.seitanzahl = seitanzahl;
     }
-
-    // Methoden (Methods)
 
     /* (non-Javadoc)
      * @see java.lang.Object#hashCode()
@@ -138,7 +159,7 @@ public class Book {
         result = prime * result + (this.autor == null ? 0 : this.autor.hashCode());
         result = prime * result + (this.beschreibung == null ? 0 : this.beschreibung.hashCode());
         result = prime * result + (this.isbnNummer == null ? 0 : this.isbnNummer.hashCode());
-        result = prime * result + this.seitanzahl;
+        result = prime * result + (this.seitanzahl == null ? 0 : this.seitanzahl.hashCode());
         result = prime * result + (this.titel == null ? 0 : this.titel.hashCode());
         return result;
     }
@@ -179,7 +200,11 @@ public class Book {
         } else if (!this.isbnNummer.equals(other.isbnNummer)) {
             return false;
         }
-        if (this.seitanzahl != other.seitanzahl) {
+        if (this.seitanzahl == null) {
+            if (other.seitanzahl != null) {
+                return false;
+            }
+        } else if (!this.seitanzahl.equals(other.seitanzahl)) {
             return false;
         }
         if (this.titel == null) {
@@ -201,8 +226,6 @@ public class Book {
         return "Book [titel=" + this.titel + ", autor=" + this.autor + ", isbnNummer=" + this.isbnNummer + ", beschreibung=" + this.beschreibung + ", seitanzahl=" + this.seitanzahl + "]";
     }
 
-    /**
-     * @param string
-     */
+
 
 }

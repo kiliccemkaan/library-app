@@ -4,5 +4,6 @@ server:
 logging:
   level:
     hello: DEBUG
+    org.springframework.web: DEBUG
 
     
